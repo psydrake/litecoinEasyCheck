@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <h3 class="muted">Markets</h3>
+
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+        <th>Symbol</th>
+		<th>Latest Trade</th>
+        <th class="currency">Close</th>
+        <th class="currency">Average</th>
+        <th class="currency">High</th>
+        <th class="currency">Low</th>
+		<th><i class="fa fa-bitcoin"></i> Volume</th>
+      </tr>
+      <tr ng-repeat="market in markets">
+        <td>{{market.symbol}}</td>
+		<td>{{market.latest_trade | date: 'short'}}</td>
+        <td class="currency"><span ng-class="getClosePriceClass(market.close, market.avg)">{{market.close | currency: currencySymbol(market.currency)}}</span></td>
+        <td class="currency">{{market.avg | currency: currencySymbol(market.currency)}}</td>
+        <td class="currency"><span class="priceUp">{{market.high | currency: currencySymbol(market.currency)}}</span></td>
+        <td class="currency"><span class="priceDown">{{market.low | currency: currencySymbol(market.currency)}}</span></td>
+        <td>{{market.volume | number}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

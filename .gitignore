@@ -1,0 +1,28 @@
+.classpath
+.settings/
+logs/*
+!.gitkeep
+node_modules/
+tmp
+.DS_Store
+*.pyc
+.idea/
+.project
+*.iml
+**/gen/*
+**/bin/*
+platforms/android/assets/www
+platforms/ios/www
+platforms/ios/CordovaLib/CordovaLib.xcodeproj/xcuserdata/
+platforms/ios/Bitcoin\ Easy\ Check.xcodeproj/project.xcworkspace/
+platforms/ios/Bitcoin\ Easy\ Check.xcodeproj/project.pbxproj/
+console.log
+chrome/app.zip
+chrome/www/*
+firefoxos/www/*
+platforms/wp8/www/
+obj/
+**/Bin/Debug/*
+*.suo
+*.user
+Thumbs.db

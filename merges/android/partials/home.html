@@ -1,0 +1,25 @@
+<div class="jumbotron">
+    <div class="row-fluid">
+		<div class="span12">
+		    <h4 class="text-muted">{{latest_trade | date: 'MMM d, y h:mm a'}}</h4>
+		</div>
+	</div>
+    <div class="row-fluid">
+		<div class="span12">
+			high: <span class="priceUp">{{high | currency: currencySymbol(currency)}}</span><br/>
+            low: <span class="priceDown">{{low | currency: currencySymbol(currency)}}</span><br/>
+            <h1><span class="{{closePriceClass}}">{{close | currency: currencySymbol(currency)}}</span></h1>
+			24h avg: <span class="text-muted">{{avg24h | currency: currencySymbol(currency)}}</span>
+		</div>
+    </div>
+    <div class="row-fluid">
+		<div class="span12">
+		    <h4 class="text-muted">{{symbol}}</h3>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+		    <div class="small"><i class="fa fa-bitcoin"></i> volume: <span class="text-muted">{{volume | number}}</span></div>
+		</div>
+	</div>
+</div>

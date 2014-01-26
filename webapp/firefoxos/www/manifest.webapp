@@ -1,0 +1,19 @@
+{
+  "version": "1.5.7",
+  "name": "Bitcoin Easy Check",
+  "description": "Check the market price of Bitcoin. Simple and easy. Backend caches data from the bitcoincharts.com API.",
+  "launch_path": "/main.html",
+  "icons": {
+    "16": "/img/bitcoinEasyCheck_16.png",
+    "48": "/img/bitcoinEasyCheck_48.png",
+    "60": "/img/bitcoinEasyCheck_60.png",
+    "90": "/img/bitcoinEasyCheck_90.png",
+    "120": "/img/bitcoinEasyCheck_120.png",
+    "128": "/img/bitcoinEasyCheck_128.png"
+  },
+  "developer": {
+    "name": "Drake Emko",
+    "url": "https://github.com/psydrake"
+  },
+  "default_locale": "en"
+}

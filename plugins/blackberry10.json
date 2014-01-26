@@ -1,0 +1,1 @@
+{"prepare_queue":{"installed":[],"uninstalled":[]},"config_munge":{},"installed_plugins":{"com.danielcwilson.plugins.googleanalytics":{"PACKAGE_NAME":"net.edrake.bitcoineasycheck"},"org.apache.cordova.inappbrowser":{"PACKAGE_NAME":"net.edrake.bitcoineasycheck"},"com.rjfun.cordova.plugin.admob":{"PACKAGE_NAME":"net.edrake.bitcoineasycheck"}},"dependent_plugins":{}}
