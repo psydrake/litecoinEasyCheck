@@ -2,6 +2,11 @@
 
 angular.module('app.controllers', []).
     controller('homeController', function($scope, $rootScope, $log, cryptocoinchartsAPIService, utilService, settingsService, customService) {
+		$scope.getPriceCompareClass = function(price1, price2) {
+			$log.info('price compare:', price1, price2);
+			return utilService.getPriceCompareClass(price1, price2);
+		}
+
         $scope.currency = settingsService.getCurrency();
         $scope.latest_trade = settingsService.getLatestTrade(); // GMT date of the latest trade in database
         $scope.price_before_24h = settingsService.getNumValue('price_before_24h'); // last traded price 24 hours before
@@ -31,20 +36,6 @@ angular.module('app.controllers', []).
 
                     settingsService.setNumValue('volume_ltc', trading.volume_first);
                     $scope.volume_ltc = settingsService.getNumValue('volume_ltc');
-
-					// set css class for price
-					if (!$scope.price || !$scope.price_before_24h) {
-						$scope.priceClass = 'priceUnknown';
-					}
-					else if ($scope.price > $scope.price_before_24h) {
-						$scope.priceClass = 'priceUp';
-					}
-					else if ($scope.price < $scope.price_before_24h) {
-						$scope.priceClass = 'priceDown';
-					}
-					else {
-						$scope.priceClass = 'priceSame';
-					}
 				}
 				else {
 					$log.warn('Warning: No trading data returned from cryptocoinchartsAPIService.getLTCTrading(' + $scope.currency + ')', response);

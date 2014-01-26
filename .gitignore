@@ -17,9 +17,9 @@ platforms/ios/CordovaLib/CordovaLib.xcodeproj/xcuserdata/
 platforms/ios/Bitcoin\ Easy\ Check.xcodeproj/project.xcworkspace/
 platforms/ios/Bitcoin\ Easy\ Check.xcodeproj/project.pbxproj/
 console.log
-chrome/app.zip
-chrome/www/*
-firefoxos/www/*
+webapp/chrome/app.zip
+webapp/chrome/www/*
+webapp/firefoxos/www/*
 platforms/wp8/www/
 obj/
 **/Bin/Debug/*

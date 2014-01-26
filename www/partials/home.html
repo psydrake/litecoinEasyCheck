@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="span4">
-            <h1><span class="{{closePriceClass}}">{{price | currency: currencySymbol(currency)}}</span></h1>
+            <h1><span ng-class="getPriceCompareClass(price, price_before_24h)">{{price | currency: currencySymbol(currency)}}</span></h1>
         </div>
         <div class="span4">
             <div>
