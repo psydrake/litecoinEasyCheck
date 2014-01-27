@@ -21,9 +21,6 @@ angular.module('app.controllers', []).
 
                     settingsService.setNumValue('price_btc', response.price);
                     $scope.price_btc = settingsService.getNumValue('price_btc');
-
-                    settingsService.setNumValue('volume_btc', response.volume_second);
-                    $scope.volume_btc = settingsService.getNumValue('volume_btc');
 				}
 				else {
 					$log.warn('Warning: No trading data returned from cryptocoinchartsAPIService.getLTCTrading(BTC)', response);
@@ -46,8 +43,14 @@ angular.module('app.controllers', []).
                     settingsService.setBestMarket(response.best_market);
                     $scope.best_market = settingsService.getBestMarket();
 
+                    settingsService.setNumValue('volume', response.volume_second);
+                    $scope.volume = settingsService.getNumValue('volume');
+
                     settingsService.setNumValue('volume_ltc', response.volume_first);
                     $scope.volume_ltc = settingsService.getNumValue('volume_ltc');
+
+                    settingsService.setNumValue('volume_btc', response.volume_btc);
+                    $scope.volume_btc = settingsService.getNumValue('volume_btc');
 				}
 				else {
 					$log.warn('Warning: No trading data returned from cryptocoinchartsAPIService.getLTCTrading(' + $scope.currency + ')', response);
@@ -74,14 +77,6 @@ angular.module('app.controllers', []).
 		});
 
 		$scope.symbols = settingsService.symbols;
-/*
-        $scope.$on('cryptocoinchartsAPIService.refresh', function(event, path) {
-            if (path && path.substring(0,9) === '/settings') {
-                $scope.loadData();
-            }
-        });
-*/
-        //$rootScope.loadData();
 
 		customService.trackPage('/settings');
     }).
