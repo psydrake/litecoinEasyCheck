@@ -17,7 +17,7 @@
        under the License.
  */
 
-package net.edrake.bitcoineasycheck;
+package net.edrake.litecoineasycheck;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -33,9 +33,9 @@ import com.google.ads.*;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class bitcoinEasyCheck extends CordovaActivity {
+public class litecoinEasyCheck extends CordovaActivity {
 
-	private final static String ADMOB_AD_UNIT = "ca-app-pub-8928397865273246/7500862619";
+	private final static String ADMOB_AD_UNIT = "ca-app-pub-8928397865273246/3779426219";
 
 	Timer timer;
 

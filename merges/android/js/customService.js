@@ -18,12 +18,11 @@ angular.module('app.customService', []).
 			doCustomActions: function() {
 				$timeout(function() {
 					if (typeof analytics !== "undefined") {
-						analytics.startTrackerWithId('UA-46128370-2');
+						analytics.startTrackerWithId('UA-47455659-1');
 					}
 				}, 1000);
 
-				// Note: Google Analytics is also handled by com.google.analytics.tracking.android.EasyTracker in bitcoinEasyCheck.java
-				// Note: AdMob handled by com.google.ads.* in bitcoinEasyCheck.java
+				// Note: AdMob handled by com.google.ads.* in litecoinEasyCheck.java
 			}
 		}
 	});
