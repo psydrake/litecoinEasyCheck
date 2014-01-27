@@ -3,7 +3,7 @@
 angular.module('app.controllers', []).
     controller('homeController', function($scope, $rootScope, $log, cryptocoinchartsAPIService, utilService, settingsService, customService) {
 		$scope.getPriceCompareClass = function(price1, price2) {
-			$log.info('price compare:', price1, price2);
+			//$log.info('price compare:', price1, price2);
 			return utilService.getPriceCompareClass(price1, price2);
 		}
 
@@ -17,7 +17,7 @@ angular.module('app.controllers', []).
         $scope.loadData = function() {
             cryptocoinchartsAPIService.getLTCTrading('BTC').success(function (response) {
 				if (response) {
-					$log.info('BTC response:', response);
+					//$log.info('BTC response:', response);
 
                     settingsService.setNumValue('price_btc', response.price);
                     $scope.price_btc = settingsService.getNumValue('price_btc');
@@ -29,7 +29,7 @@ angular.module('app.controllers', []).
 
             cryptocoinchartsAPIService.getLTCTrading($scope.currency).success(function (response) {
 				if (response) {
-					$log.info($scope.currency, 'response:', response);
+					//$log.info($scope.currency, 'response:', response);
 
                     settingsService.setNumValue('latest_trade', Date.parse(response.latest_trade + ' GMT'));
                     $scope.latest_trade = settingsService.getNumValue('latest_trade');

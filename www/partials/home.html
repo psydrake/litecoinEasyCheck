@@ -9,7 +9,7 @@
         <div class="span4">
             <div>
                 24h before:<br/>
-				<span class="text-muted">{{price_before_24h | currency: currencySymbol(currency)}}</span>
+				<span class="text-muted" ng-class="getPriceCompareClass(price_before_24h, price)">{{price_before_24h | currency: currencySymbol(currency)}}</span>
             </div>
         </div>
         <div class="span4">

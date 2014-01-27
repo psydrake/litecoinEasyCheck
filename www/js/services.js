@@ -103,20 +103,6 @@ angular.module('app.services', []).
                 }
             },
 
-            getLatestTrade: function() {
-                var latestTrade = '';
-                if (this.store && this.store.get('latest_trade')) {
-                    latestTrade = this.store.get('latest_trade');
-                }
-                return latestTrade;
-            },
-
-            setLatestTrade: function(latestTrade) {
-                if (latestTrade && this.store) {
-                    this.store.set('latest_trade', latestTrade);
-                }
-            },
-
             // get a number value by key - defaults to zero if not found in local storage
             getNumValue: function(key) {
                 var value = 0;
