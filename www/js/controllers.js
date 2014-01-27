@@ -8,7 +8,7 @@ angular.module('app.controllers', []).
 		}
 
         $scope.currency = settingsService.getCurrency();
-        $scope.latest_trade = settingsService.getLatestTrade(); // GMT date of the latest trade in database
+        $scope.latest_trade = settingsService.getNumValue('latest_trade'); // GMT date of the latest trade in database
         $scope.price_before_24h = settingsService.getNumValue('price_before_24h'); // last traded price 24 hours before
         $scope.price = settingsService.getNumValue('price'); // last traded price of best market
         $scope.best_market = settingsService.getBestMarket(); // market with the most volume for this trading pair
@@ -31,8 +31,8 @@ angular.module('app.controllers', []).
 				if (response) {
 					$log.info($scope.currency, 'response:', response);
 
-                    settingsService.setLatestTrade(response.latest_trade);
-                    $scope.latest_trade = settingsService.getLatestTrade();
+                    settingsService.setNumValue('latest_trade', Date.parse(response.latest_trade + ' GMT'));
+                    $scope.latest_trade = settingsService.getNumValue('latest_trade');
 
                     settingsService.setNumValue('price_before_24h', response.price_before_24h);
                     $scope.price_before_24h = settingsService.getNumValue('price_before_24h');
