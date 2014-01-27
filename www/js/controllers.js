@@ -15,26 +15,38 @@ angular.module('app.controllers', []).
         $scope.volume = settingsService.getNumValue('volume'); // trading volume expressed as LTC
 
         $scope.loadData = function() {
-            cryptocoinchartsAPIService.getLTCTrading($scope.currency).success(function (trading) {
-				if (trading) {
-					$log.info('trading:', trading);
+            cryptocoinchartsAPIService.getLTCTrading('BTC').success(function (response) {
+				if (response) {
+					$log.info('BTC response:', response);
 
-                    settingsService.setCurrency(trading.currency);
-                    $scope.currency = settingsService.getCurrency();
+                    settingsService.setNumValue('price_btc', response.price);
+                    $scope.price_btc = settingsService.getNumValue('price_btc');
 
-                    settingsService.setLatestTrade(trading.latest_trade);
+                    settingsService.setNumValue('volume_btc', response.volume_second);
+                    $scope.volume_btc = settingsService.getNumValue('volume_btc');
+				}
+				else {
+					$log.warn('Warning: No trading data returned from cryptocoinchartsAPIService.getLTCTrading(BTC)', response);
+				}
+			});
+
+            cryptocoinchartsAPIService.getLTCTrading($scope.currency).success(function (response) {
+				if (response) {
+					$log.info($scope.currency, 'response:', response);
+
+                    settingsService.setLatestTrade(response.latest_trade);
                     $scope.latest_trade = settingsService.getLatestTrade();
 
-                    settingsService.setNumValue('price_before_24h', trading.price_before_24h);
+                    settingsService.setNumValue('price_before_24h', response.price_before_24h);
                     $scope.price_before_24h = settingsService.getNumValue('price_before_24h');
 
-                    settingsService.setNumValue('price', trading.price);
+                    settingsService.setNumValue('price', response.price);
                     $scope.price = settingsService.getNumValue('price');
 
-                    settingsService.setBestMarket(trading.best_market);
+                    settingsService.setBestMarket(response.best_market);
                     $scope.best_market = settingsService.getBestMarket();
 
-                    settingsService.setNumValue('volume_ltc', trading.volume_first);
+                    settingsService.setNumValue('volume_ltc', response.volume_first);
                     $scope.volume_ltc = settingsService.getNumValue('volume_ltc');
 				}
 				else {
@@ -44,7 +56,7 @@ angular.module('app.controllers', []).
         }
 
         $scope.$on('cryptocoinchartsAPIService.refresh', function(event, path) {
-            if (path === '/home') {
+            if (path && path === '/home') {
                 $scope.loadData();
             }
         });
@@ -62,14 +74,14 @@ angular.module('app.controllers', []).
 		});
 
 		$scope.symbols = settingsService.symbols;
-
+/*
         $scope.$on('cryptocoinchartsAPIService.refresh', function(event, path) {
             if (path && path.substring(0,9) === '/settings') {
                 $scope.loadData();
             }
         });
-
-        $rootScope.loadData();
+*/
+        //$rootScope.loadData();
 
 		customService.trackPage('/settings');
     }).

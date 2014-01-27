@@ -133,7 +133,7 @@ angular.module('app.services', []).
                 }
             },
 
-            symbols: ['BTC', 'CNY', 'EUR', 'USD']
+            symbols: ['CNY', 'EUR', 'USD']
         }
     }).
     factory('cryptocoinchartsAPIService', function($http, utilService) {

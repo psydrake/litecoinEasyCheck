@@ -24,7 +24,10 @@
     </div>
 	<div class="row-fluid">
 		<div class="span12">
-		    <div class="small">{{currencySymbol('LTC')}} volume: <span class="text-muted">{{volume_ltc | number}}</span></div>
+		    <div class="small">
+				volume: <span class="text-muted">{{currencySymbol('LTC')}} {{volume_ltc | number}}</span>,
+						<span class="text-muted"><i class="fa fa-btc"></i> {{volume_btc | number}}</span>
+			</div>
 		</div>
 	</div>
 </div>
