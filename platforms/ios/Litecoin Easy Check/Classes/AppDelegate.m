@@ -92,7 +92,7 @@
 }
 
 // this happens while we are running ( in the background, or from within our own app )
-// only valid if bitcoinEasyCheck-Info.plist specifies a protocol to handle
+// only valid if litecoinEasyCheck-Info.plist specifies a protocol to handle
 - (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url
 {
     if (!url) {
