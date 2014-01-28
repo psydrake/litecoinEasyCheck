@@ -6,7 +6,7 @@ angular.module('app.customService', []).
 		var createBannerView = function() {
 			var am = window.plugins.AdMob;
 		    am.createBannerView({
-				'publisherId': 'ca-app-pub-8928397865273246/5854175810',
+				'publisherId': 'ca-app-pub-8928397865273246/7738621011',
 				'adSize': am.AD_SIZE.BANNER,
 				'bannerAtTop': false
 			}, function() {
@@ -72,7 +72,7 @@ angular.module('app.customService', []).
 					createBannerView();
 
 					if (typeof analytics !== "undefined") {
-						analytics.startTrackerWithId('UA-46128370-2');
+						analytics.startTrackerWithId('UA-47455659-1');
 					}
 				}, 1000);
 			}
