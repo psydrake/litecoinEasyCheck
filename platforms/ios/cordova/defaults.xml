@@ -26,7 +26,7 @@
     </feature>
     <name>Litecoin Easy Check</name>
     <description>
-		Check the market price of litecoin. Simple and easy. Backend caches data from the cryptocoincharts.info API.
+		Check the market price of Litecoin. Simple and easy. Backend caches data from the CryptoCoinCharts.info API.
     </description>
     <author email="drakee@gmail.com" href="https://github.com/psydrake">
         Drake Emko
