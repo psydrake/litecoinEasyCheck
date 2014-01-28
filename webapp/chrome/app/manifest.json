@@ -1,7 +1,7 @@
 {
   "name": "Litecoin Easy Check",
   "description": "Check the market price of Litecoin. Simple and easy. Backend caches data from the cryptocoincharts.info API.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "manifest_version": 2,
   "icons": { "16": "litecoin_easy_check_16x16.png", "128": "litecoin_easy_check_128x128.png" },
   "app": {
