@@ -31,9 +31,9 @@ angular.module('app.controllers', []).
 
             cryptocoinchartsAPIService.getLTCTrading($scope.currency).success(function (response) {
 				if (response) {
-					//$log.info($scope.currency, 'response:', response);
-
-                    settingsService.setNumValue('latest_trade', Date.parse(response.latest_trade + ' GMT'));
+					var latestTradeStr = response.latest_trade.replace(/\-/g, '/') + ' GMT';
+					//$log.info('latest_trade', latestTradeStr);
+                    settingsService.setNumValue('latest_trade', Date.parse(latestTradeStr));
                     $scope.latest_trade = settingsService.getNumValue('latest_trade');
 
                     settingsService.setNumValue('price_before_24h', response.price_before_24h);
