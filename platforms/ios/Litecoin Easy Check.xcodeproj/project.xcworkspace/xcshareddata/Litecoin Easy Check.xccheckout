@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>FEA4F021-1DE3-44BB-A73E-4BA48EFAE9C3</string>
+	<string>2C6EB948-840B-4387-88D5-BCD9EC55B156</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Bitcoin Easy Check</string>
+	<string>Litecoin Easy Check</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5B350CDD-4B0B-40FB-9DBA-51862EFB7C8C</key>
-		<string>https://github.com/psydrake/bitcoinEasyCheck.git</string>
+		<key>EA075F0C-A3BA-4B0B-AC16-6A0DF052C8E4</key>
+		<string>https://github.com/psydrake/litecoinEasyCheck.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>platforms/ios/Bitcoin Easy Check.xcodeproj/project.xcworkspace</string>
+	<string>platforms/ios/Litecoin Easy Check.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5B350CDD-4B0B-40FB-9DBA-51862EFB7C8C</key>
+		<key>EA075F0C-A3BA-4B0B-AC16-6A0DF052C8E4</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/psydrake/bitcoinEasyCheck.git</string>
+	<string>https://github.com/psydrake/litecoinEasyCheck.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5B350CDD-4B0B-40FB-9DBA-51862EFB7C8C</string>
+	<string>EA075F0C-A3BA-4B0B-AC16-6A0DF052C8E4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5B350CDD-4B0B-40FB-9DBA-51862EFB7C8C</string>
+			<string>EA075F0C-A3BA-4B0B-AC16-6A0DF052C8E4</string>
 			<key>IDESourceControlWCCName</key>
-			<string>bitcoinEasyCheck</string>
+			<string>litecoinEasyCheck</string>
 		</dict>
 	</array>
 </dict>

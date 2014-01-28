@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "Bitcoin Easy Check.app"
-               BlueprintName = "Bitcoin Easy Check"
-               ReferencedContainer = "container:Bitcoin Easy Check.xcodeproj">
+               BuildableName = "Litecoin Easy Check.app"
+               BlueprintName = "Litecoin Easy Check"
+               ReferencedContainer = "container:Litecoin Easy Check.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Bitcoin Easy Check.app"
-            BlueprintName = "Bitcoin Easy Check"
-            ReferencedContainer = "container:Bitcoin Easy Check.xcodeproj">
+            BuildableName = "Litecoin Easy Check.app"
+            BlueprintName = "Litecoin Easy Check"
+            ReferencedContainer = "container:Litecoin Easy Check.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Bitcoin Easy Check.app"
-            BlueprintName = "Bitcoin Easy Check"
-            ReferencedContainer = "container:Bitcoin Easy Check.xcodeproj">
+            BuildableName = "Litecoin Easy Check.app"
+            BlueprintName = "Litecoin Easy Check"
+            ReferencedContainer = "container:Litecoin Easy Check.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "Bitcoin Easy Check.app"
-            BlueprintName = "Bitcoin Easy Check"
-            ReferencedContainer = "container:Bitcoin Easy Check.xcodeproj">
+            BuildableName = "Litecoin Easy Check.app"
+            BlueprintName = "Litecoin Easy Check"
+            ReferencedContainer = "container:Litecoin Easy Check.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

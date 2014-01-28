@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Bitcoin Easy Check.xcodeproj">
+      location = "self:Litecoin Easy Check.xcodeproj">
    </FileRef>
 </Workspace>

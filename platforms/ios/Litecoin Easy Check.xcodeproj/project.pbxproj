@@ -72,11 +72,11 @@
 /* Begin PBXFileReference section */
 		066A6F9AFB00450EAA5F0E7D /* CDVInAppBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVInAppBrowser.h; path = org.apache.cordova.inappbrowser/CDVInAppBrowser.h; sourceTree = "<group>"; };
 		085B8D65D9824EE1BAD0C787 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADBannerView.h; path = com.rjfun.cordova.plugin.admob/GADBannerView.h; sourceTree = "<group>"; };
-		0D7E809042644A7BBA41BB92 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Bitcoin Easy Check/Plugins/com.rjfun.cordova.plugin.admob/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
+		0D7E809042644A7BBA41BB92 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = "Litecoin Easy Check/Plugins/com.rjfun.cordova.plugin.admob/libGoogleAdMobAds.a"; sourceTree = "<group>"; };
 		14845DFBA1D943A6833748D2 /* CDVAdMob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVAdMob.h; path = com.rjfun.cordova.plugin.admob/CDVAdMob.h; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Bitcoin Easy Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Easy Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Litecoin Easy Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Litecoin Easy Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D956956621042C68AB10BF8 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADBannerViewDelegate.h; path = com.rjfun.cordova.plugin.admob/GADBannerViewDelegate.h; sourceTree = "<group>"; };
 		1DD9114F92094BFD832F7E28 /* AdSupport.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		1F766FDD13BBADB100FB74C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -102,13 +102,13 @@
 		30A0434414DC770100060A13 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Localizable.strings; sourceTree = "<group>"; };
 		30A0434714DC770100060A13 /* se */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = se; path = Localizable.strings; sourceTree = "<group>"; };
 		30FC414816E50CA1004E6F35 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* Bitcoin Easy Check-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bitcoin Easy Check-Prefix.pch"; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* Litecoin Easy Check-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Litecoin Easy Check-Prefix.pch"; sourceTree = "<group>"; };
 		4D638BEC74464D98A7F5B09B /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADRequest.h; path = com.rjfun.cordova.plugin.admob/GADRequest.h; sourceTree = "<group>"; };
 		4F91D2D677FB461896E57F73 /* UniversalAnalyticsPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UniversalAnalyticsPlugin.m; path = com.danielcwilson.plugins.googleanalytics/UniversalAnalyticsPlugin.m; sourceTree = "<group>"; };
 		5AAE8A710A3A403A8DBD73B7 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdSize.h; path = com.rjfun.cordova.plugin.admob/GADAdSize.h; sourceTree = "<group>"; };
 		5AEE5B34173C68D80009041E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		5D726D501859A99B00DE0B80 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-2.xcassets"; path = "Bitcoin Easy Check/Images-2.xcassets"; sourceTree = SOURCE_ROOT; };
+		5D726D501859A99B00DE0B80 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images-2.xcassets"; path = "Litecoin Easy Check/Images-2.xcassets"; sourceTree = SOURCE_ROOT; };
 		5DA3782F18595279005F27C9 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
 		5DA3783018595279005F27C9 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
 		5DA3783118595279005F27C9 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		7E7966D61810823500FA85AD /* icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-50.png"; sourceTree = "<group>"; };
 		7E7966D91810823500FA85AD /* icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60@2x.png"; sourceTree = "<group>"; };
 		7E7966DA1810823500FA85AD /* icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76.png"; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Bitcoin Easy Check-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bitcoin Easy Check-Info.plist"; path = "../Bitcoin Easy Check-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Litecoin Easy Check-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Litecoin Easy Check-Info.plist"; path = "../Litecoin Easy Check-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9A10E4CFC37441C088BADE81 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = com.rjfun.cordova.plugin.admob/libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		A50C21EAB9A140679E602B65 /* libz.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AE2E7F7827C1470B9F629E27 /* UniversalAnalyticsPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniversalAnalyticsPlugin.h; path = com.danielcwilson.plugins.googleanalytics/UniversalAnalyticsPlugin.h; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		DFCE071F58714B4A89CF68BF /* CoreData.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F15CCA2A192F47629530F1B6 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADRequestError.h; path = com.rjfun.cordova.plugin.admob/GADRequestError.h; sourceTree = "<group>"; };
-		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Bitcoin Easy Check/config.xml"; sourceTree = "<group>"; };
+		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Litecoin Easy Check/config.xml"; sourceTree = "<group>"; };
 		FBC440CF23EB40D89A352753 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADAdMobExtras.h; path = com.rjfun.cordova.plugin.admob/GADAdMobExtras.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,13 +188,13 @@
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
 			);
 			name = Classes;
-			path = "Bitcoin Easy Check/Classes";
+			path = "Litecoin Easy Check/Classes";
 			sourceTree = SOURCE_ROOT;
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Bitcoin Easy Check.app */,
+				1D6058910D05DD3D006BFB54 /* Litecoin Easy Check.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,11 +252,11 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* Bitcoin Easy Check-Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* Litecoin Easy Check-Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
-			path = "Bitcoin Easy Check";
+			path = "Litecoin Easy Check";
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
@@ -269,10 +269,10 @@
 				1F766FDE13BBADB100FB74C0 /* es.lproj */,
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
-				8D1107310486CEB800E47090 /* Bitcoin Easy Check-Info.plist */,
+				8D1107310486CEB800E47090 /* Litecoin Easy Check-Info.plist */,
 			);
 			name = Resources;
-			path = "Bitcoin Easy Check/Resources";
+			path = "Litecoin Easy Check/Resources";
 			sourceTree = "<group>";
 		};
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
@@ -324,7 +324,7 @@
 				066A6F9AFB00450EAA5F0E7D /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
-			path = "Bitcoin Easy Check/Plugins";
+			path = "Litecoin Easy Check/Plugins";
 			sourceTree = SOURCE_ROOT;
 		};
 		308D052D1370CCF300D202BF /* icons */ = {
@@ -375,9 +375,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* Bitcoin Easy Check */ = {
+		1D6058900D05DD3D006BFB54 /* Litecoin Easy Check */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Bitcoin Easy Check" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Litecoin Easy Check" */;
 			buildPhases = (
 				304B58A110DAC018002A0835 /* Copy www directory */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
@@ -389,9 +389,9 @@
 			dependencies = (
 				301BF551109A68C00062928A /* PBXTargetDependency */,
 			);
-			name = "Bitcoin Easy Check";
-			productName = "Bitcoin Easy Check";
-			productReference = 1D6058910D05DD3D006BFB54 /* Bitcoin Easy Check.app */;
+			name = "Litecoin Easy Check";
+			productName = "Litecoin Easy Check";
+			productReference = 1D6058910D05DD3D006BFB54 /* Litecoin Easy Check.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -402,7 +402,7 @@
 			attributes = {
 				LastUpgradeCheck = 500;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Bitcoin Easy Check" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Litecoin Easy Check" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -426,7 +426,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* Bitcoin Easy Check */,
+				1D6058900D05DD3D006BFB54 /* Litecoin Easy Check */,
 			);
 		};
 /* End PBXProject section */
@@ -560,17 +560,17 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bitcoin Easy Check/Bitcoin Easy Check-Prefix.pch";
+				GCC_PREFIX_HEADER = "Litecoin Easy Check/Litecoin Easy Check-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "Bitcoin Easy Check/Bitcoin Easy Check-Info.plist";
+				INFOPLIST_FILE = "Litecoin Easy Check/Litecoin Easy Check-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/Bitcoin\\ Easy\\ Check/Plugins/com.rjfun.cordova.plugin.admob\\\"",
-					/Users/revdrakeemko/projects/bitcoinEasyCheck/platforms/ios,
-					"/Users/revdrakeemko/projects/bitcoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02/GoogleAnalytics/Library",
-					"/Users/revdrakeemko/projects/bitcoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02",
+					"\\\"$(SRCROOT)/Litecoin\\ Easy\\ Check/Plugins/com.rjfun.cordova.plugin.admob\\\"",
+					/Users/revdrakeemko/projects/litecoinEasyCheck/platforms/ios,
+					"/Users/revdrakeemko/projects/litecoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02/GoogleAnalytics/Library",
+					"/Users/revdrakeemko/projects/litecoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02",
 				);
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -586,7 +586,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "Bitcoin Easy Check";
+				PRODUCT_NAME = "Litecoin Easy Check";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -599,17 +599,17 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Bitcoin Easy Check/Bitcoin Easy Check-Prefix.pch";
+				GCC_PREFIX_HEADER = "Litecoin Easy Check/Litecoin Easy Check-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "Bitcoin Easy Check/Bitcoin Easy Check-Info.plist";
+				INFOPLIST_FILE = "Litecoin Easy Check/Litecoin Easy Check-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\\\"$(SRCROOT)/Bitcoin\\ Easy\\ Check/Plugins/com.rjfun.cordova.plugin.admob\\\"",
-					/Users/revdrakeemko/projects/bitcoinEasyCheck/platforms/ios,
-					"/Users/revdrakeemko/projects/bitcoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02/GoogleAnalytics/Library",
-					"/Users/revdrakeemko/projects/bitcoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02",
+					"\\\"$(SRCROOT)/Litecoin\\ Easy\\ Check/Plugins/com.rjfun.cordova.plugin.admob\\\"",
+					/Users/revdrakeemko/projects/litecoinEasyCheck/platforms/ios,
+					"/Users/revdrakeemko/projects/litecoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02/GoogleAnalytics/Library",
+					"/Users/revdrakeemko/projects/litecoinEasyCheck/vendor/ios/GoogleAdMobAdsSDKiOS-6.6.0/Add-ons/GoogleAnalyticsServicesiOS_3.02",
 				);
 				OTHER_LDFLAGS = (
 					"-weak_framework",
@@ -625,7 +625,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "Bitcoin Easy Check";
+				PRODUCT_NAME = "Litecoin Easy Check";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -724,7 +724,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Bitcoin Easy Check" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Litecoin Easy Check" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -733,7 +733,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Bitcoin Easy Check" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Litecoin Easy Check" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
