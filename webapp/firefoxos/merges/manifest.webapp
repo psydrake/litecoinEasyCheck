@@ -1,15 +1,15 @@
 {
   "version": "1.0.2",
-  "name": "Bitcoin Easy Check",
-  "description": "Check the market price of Bitcoin. Simple and easy. Backend caches data from the bitcoincharts.com API.",
+  "name": "Litecoin Easy Check",
+  "description": "Check the market price of Litecoin. Simple and easy. Backend caches data from the cryptocoincharts.info API.",
   "launch_path": "/main.html",
   "icons": {
-    "16": "/img/bitcoinEasyCheck_16.png",
-    "48": "/img/bitcoinEasyCheck_48.png",
-    "60": "/img/bitcoinEasyCheck_60.png",
-    "90": "/img/bitcoinEasyCheck_90.png",
-    "120": "/img/bitcoinEasyCheck_120.png",
-    "128": "/img/bitcoinEasyCheck_128.png"
+    "16": "/img/litecoinEasyCheck_16.png",
+    "48": "/img/litecoinEasyCheck_48.png",
+    "60": "/img/litecoinEasyCheck_60.png",
+    "90": "/img/litecoinEasyCheck_90.png",
+    "120": "/img/litecoinEasyCheck_120.png",
+    "128": "/img/litecoinEasyCheck_128.png"
   },
   "developer": {
     "name": "Drake Emko",
