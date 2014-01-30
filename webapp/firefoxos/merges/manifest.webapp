@@ -5,11 +5,13 @@
   "launch_path": "/main.html",
   "icons": {
     "16": "/img/litecoinEasyCheck_16.png",
+    "32": "/img/litecoinEasyCheck_32.png",
     "48": "/img/litecoinEasyCheck_48.png",
     "60": "/img/litecoinEasyCheck_60.png",
     "90": "/img/litecoinEasyCheck_90.png",
     "120": "/img/litecoinEasyCheck_120.png",
-    "128": "/img/litecoinEasyCheck_128.png"
+    "128": "/img/litecoinEasyCheck_128.png",
+    "256": "/img/litecoinEasyCheck_256.png"
   },
   "developer": {
     "name": "Drake Emko",
