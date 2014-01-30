@@ -9,8 +9,8 @@
         <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>net.edrake.bitcoineasycheck</RootNamespace>
-        <AssemblyName>net.edrake.bitcoineasycheck</AssemblyName>
+        <RootNamespace>net.edrake.litecoineasycheck</RootNamespace>
+        <AssemblyName>net.edrake.litecoineasycheck</AssemblyName>
         <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
         <SilverlightVersion>
         </SilverlightVersion>
@@ -23,7 +23,7 @@
         <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
         <XapFilename>CordovaAppProj_$(Configuration)_$(Platform).xap</XapFilename>
         <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
-        <SilverlightAppEntry>net.edrake.bitcoineasycheck.App</SilverlightAppEntry>
+        <SilverlightAppEntry>net.edrake.litecoineasycheck.App</SilverlightAppEntry>
         <ValidateXaml>true</ValidateXaml>
         <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
         <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
@@ -258,7 +258,7 @@
         <Content Include="www\favicon.ico" />
     </ItemGroup>
     <ItemGroup>
-        <Content Include="www\img\bitcoinEasyCheck_128x128.png" />
+        <Content Include="www\img\litecoinEasyCheck_128x128.png" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\img\logo.png" />

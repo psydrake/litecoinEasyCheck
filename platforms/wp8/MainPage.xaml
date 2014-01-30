@@ -17,7 +17,7 @@
  under the License. 
 -->
 <phone:PhoneApplicationPage 
-    x:Class="net.edrake.bitcoineasycheck.MainPage"
+    x:Class="net.edrake.litecoineasycheck.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -40,7 +40,7 @@
                    Margin="0,0,0,0"  
                    x:Name="CordovaView" 
                    VerticalAlignment="Stretch" />
-        <GoogleAds:AdView AdUnitID="ca-app-pub-8928397865273246/4377332215"
+        <GoogleAds:AdView AdUnitID="ca-app-pub-8928397865273246/5921980617"
                           Format="Banner"
                           ReceivedAd="OnAdReceived"
                           FailedToReceiveAd="OnFailedToReceiveAd"

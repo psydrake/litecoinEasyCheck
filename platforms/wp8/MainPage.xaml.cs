@@ -35,7 +35,7 @@ using System.Windows.Resources;
 
 using GoogleAds;
 
-namespace net.edrake.bitcoineasycheck
+namespace net.edrake.litecoineasycheck
 {
     public partial class MainPage : PhoneApplicationPage
     {

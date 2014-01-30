@@ -405,8 +405,9 @@ namespace WPCordovaClassLib
                     CordovaBrowser.InvokeScript("eval", new string[] { "(function(){window.history.back();})()" });
 
                     Uri uriAfter = this.Browser.Source;
-
-                    e.Cancel = PageDidChange || (uriBefore != uriAfter);
+                    // drake: always exit when back button is preseed (to pass windows 8 phone certification)
+                    //e.Cancel = PageDidChange || (uriBefore != uriAfter);
+                    e.Cancel = false;
                 }
                 catch (Exception)
                 {

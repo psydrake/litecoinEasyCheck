@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Bitcoin Easy Check</title>
+    <title>Litecoin Easy Check</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -14,20 +14,11 @@
     <script type="text/javascript" src="lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="lib/angular/ui-bootstrap-tpls-0.7.0.min.js"></script>
     <script type="text/javascript" src="lib/angular/angular-route.js"></script>
-	<!--<script type="text/javascript" src="lib/angular/angular-cookies.min.js"></script>-->
 	<script type="text/javascript" src="lib/persist-min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/controllers.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/customService.js"></script>
-	<!--
-	<script type="text/javascript">
-		// workaround for overlayed status bar in iOS 7
-		if (navigator && navigator.userAgent && navigator.userAgent.match(/OS 7/)) {
-			document.write('<style type="text/css">body{-webkit-transform: translate3d(0,20px,0)}</style>');
-		}
-	</script>
-	-->
 </head>
 <body ng-app="app">
 <div class="container">
@@ -38,9 +29,6 @@
                       <ul class="nav">
                           <!-- You can use regular expressions -->
                           <li data-match-route="/home" ng-class="getClass('/home')"><a href="#/home"><i class="fa fa-2x fa-home"></i></a></li>
-                          <li data-match-route="/weighted" ng-class="getClass('/weighted')"><a href="#/weighted"><i class="fa fa-2x fa-calendar"></i></a></li>
-                          <!--<li data-match-route="/markets" ng-class="getClass('/markets')"><a href="#/markets"><i class="fa fa-2x fa-bars"></i></a></li>-->
-                          <!--<li data-match-route="/trades/mtgoxUSD"><a href="#/trades/mtgoxUSD">mtgoxUSD</a></li>-->
                           <li data-match-route="/settings" ng-class="getClass('/settings')"><a href="#/settings"><i class="fa fa-2x fa-wrench"></i></a></li>
 						  <li data-match-route="/about" ng-class="getClass('/about')"><a href="#/about"><i class="fa fa-2x fa-info-circle"></i></a></li>
 						  <li><a href="javascript:void(0)" ng-click="loadData()"><i class="fa fa-2x fa-refresh" ng-class="loadingClass"></i></a></li>
@@ -52,9 +40,7 @@
 			<ng-view></ng-view>
 
 			<div class="footer">
-				<p>
-		          <span class="muted"><i class="fa fa-bitcoin"></i> Easy Check</span> caches data from the <a href="javascript:void(0)" ng-click="openLink('http://bitcoincharts.com/')" target="_blank">Bitcoincharts</a> API. Data may lag 15 minutes or more behind real time.
-				</p>
+				<img src="img/icon-28.png" alt="Litecoin"/> Easy Check caches data from the <a href="javascript:void(0)" ng-click="openLink('http://www.cryptocoincharts.info/')" target="_blank">CryptoCoinCharts</a> API. Read <a href="javascript:void(0)" ng-click="openLink('http://www.cryptocoinsnews.com/category/litecoin-2/')" target="_blank">Litecoin news</a> from cryptocoinsnews.com.
 			</div>
       </div>
 </div>
