@@ -258,7 +258,10 @@
         <Content Include="www\favicon.ico" />
     </ItemGroup>
     <ItemGroup>
-        <Content Include="www\img\litecoinEasyCheck_128x128.png" />
+        <Content Include="www\img\icon-28.png" />
+    </ItemGroup>
+    <ItemGroup>
+        <Content Include="www\img\litecoinEasyCheck_128.png" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\img\logo.png" />
@@ -1221,16 +1224,7 @@
         <Content Include="www\partials\home.html" />
     </ItemGroup>
     <ItemGroup>
-        <Content Include="www\partials\markets.html" />
-    </ItemGroup>
-    <ItemGroup>
         <Content Include="www\partials\settings.html" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\partials\tradesBySymbol.html" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\partials\weighted.html" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\plugins\com.danielcwilson.plugins.googleanalytics\www\analytics.js" />
