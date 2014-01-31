@@ -4,7 +4,7 @@
     <Languages xmlns="">
         <Language code="en-US" />
     </Languages>
-    <App Author="Drake Emko" BitsPerPixel="32" Description="Check the market price of litecoin. Easy." Genre="apps.normal" ProductID="{7FE6AE4D-3D66-4DAF-ADFA-84809BD626F2}" Publisher="Litecoin Easy Check" PublisherID="{db093ed5-53b1-45f7-af72-751e8f36ab80}" RuntimeType="Silverlight" Title="Litecoin Easy Check" Version="1.0" xmlns="">
+    <App Author="Drake Emko" BitsPerPixel="32" Description="Check the market price of litecoin. Easy." Genre="apps.normal" ProductID="{05829E46-2D5C-4AB9-B063-056D93E993FE}" Publisher="Litecoin Easy Check" PublisherID="{db093ed5-53b1-45f7-af72-751e8f36ab80}" RuntimeType="Silverlight" Title="Litecoin Easy Check" Version="1.0" xmlns="">
         <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
         <Capabilities>
             <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
