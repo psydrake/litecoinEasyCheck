@@ -47,6 +47,7 @@ public class litecoinEasyCheck extends CordovaActivity {
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
 
+		/* Not showing Android ads for BB10
         // Google AdMob
 		AdView adView = new AdView(this, AdSize.BANNER, ADMOB_AD_UNIT); 
         LinearLayout layout = super.root;
@@ -54,6 +55,7 @@ public class litecoinEasyCheck extends CordovaActivity {
 
         timer = new Timer(); // Delay the launch of ads; otherwise we get a seg fault
         timer.schedule(new AdMobTask(adView), 5*1000); // delay 5 seconds
+		*/
     }
 
     class AdMobTask extends TimerTask {
