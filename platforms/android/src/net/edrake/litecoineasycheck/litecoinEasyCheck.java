@@ -35,7 +35,7 @@ import java.util.TimerTask;
 
 public class litecoinEasyCheck extends CordovaActivity {
 
-	private final static String ADMOB_AD_UNIT = "ca-app-pub-8928397865273246/3779426219";
+	private final static String ADMOB_AD_UNIT = "ca-app-pub-xxxxxxxxxxxxxxxx/xxxxxxxxxx";
 
 	Timer timer;
 
