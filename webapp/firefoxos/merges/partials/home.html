@@ -13,12 +13,8 @@
             <h1 ng-show="currency !== 'BTC'"><span ng-class="getPriceCompareClass(price, price_before_24h)">{{price | currency: currencySymbol(currency)}}</span></h1>
             <h1 ng-show="currency === 'BTC'"><span ng-class="getPriceCompareClass(price, price_before_24h)"><i class="fa fa-btc"></i>{{price}}</span></h1>
             best market: <span class="text-muted">{{best_market}}</span><br/>
-            <div ng-show="currency !== 'BTC'">
-                <i class="fa fa-btc"></i><span class="text-muted">{{price_btc}}</span>
-            </div>
-            <div ng-show="currency === 'BTC'">
-                <span class="text-muted">{{price_non_btc | currency: currencySymbol(currency_non_btc)}}</span>
-            </div>
+            <div ng-show="currency !== 'BTC'"><i class="fa fa-btc"></i><span class="text-muted">{{price_btc}}</span></div>
+            <div ng-show="currency === 'BTC'"><span class="text-muted">{{price_non_btc | currency: currencySymbol(currency_non_btc)}}</span></div>
         </div>
 	</div>
 	<div class="row-fluid">

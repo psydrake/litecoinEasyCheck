@@ -20,18 +20,7 @@ angular.module('app.controllers', []).
 		$scope.price_non_btc = settingsService.getNumValue('price_non_btc');
 
         $scope.loadData = function() {
-			if ($scope.currency !== 'BTC') { // selected currency is BTC, so show price in user's preferred fiat currency too
-				cryptocoinchartsAPIService.getLTCTrading($scope.currency_non_btc).success(function (response) {
-					if (response) {
-						settingsService.setNumValue('price_non_btc', response.price);
-						$scope.price_non_btc = settingsService.getNumValue('price_non_btc');
-					}
-					else {
-						$log.warn('Warning: No trading data returned for', $scope.currency_non_btc, ':', response);
-					}
-				});
-			}
-			else { // selected currency is not BTC, so we'll show the BTC price of LTC too
+			if ($scope.currency !== 'BTC') { // selected currency is not BTC, so we'll show the BTC price of LTC too
 				cryptocoinchartsAPIService.getLTCTrading('BTC').success(function (response) {
 					if (response) {
 						settingsService.setNumValue('price_btc', response.price);
@@ -39,6 +28,17 @@ angular.module('app.controllers', []).
 					}
 					else {
 						$log.warn('Warning: No trading data returned for BTC :', response);
+					}
+				});
+			}
+			else { // selected currency is BTC, so show price in user's preferred fiat currency too
+				cryptocoinchartsAPIService.getLTCTrading($scope.currency_non_btc).success(function (response) {
+					if (response) {
+						settingsService.setNumValue('price_non_btc', response.price);
+						$scope.price_non_btc = settingsService.getNumValue('price_non_btc');
+					}
+					else {
+						$log.warn('Warning: No trading data returned for', $scope.currency_non_btc, ':', response);
 					}
 				});
 			}
