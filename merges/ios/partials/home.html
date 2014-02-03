@@ -8,11 +8,11 @@
         <div class="span12">
             24h before:
 			<span class="text-muted" ng-show="currency !== 'BTC'" ng-class="getPriceCompareClass(price_before_24h, price)">{{price_before_24h | currency: currencySymbol(currency)}}</span>
-			<span class="text-muted" ng-show="currency === 'BTC'" ng-class="getPriceCompareClass(price_before_24h, price)"><i class="fa fa-btc"></i>{{price_before_24h}}</span>
+			<span class="text-muted" ng-show="currency === 'BTC'" ng-class="getPriceCompareClass(price_before_24h, price)" style="white-space:nowrap"><i class="fa fa-btc"></i>{{price_before_24h}}</span>
 			<br/>
 
             <h1 ng-show="currency !== 'BTC'"><span ng-class="getPriceCompareClass(price, price_before_24h)">{{price | currency: currencySymbol(currency)}}</span></h1>
-            <h1 ng-show="currency === 'BTC'"><span ng-class="getPriceCompareClass(price, price_before_24h)"><i class="fa fa-btc"></i>{{price}}</span></h1>
+            <h1 ng-show="currency === 'BTC'"><span ng-class="getPriceCompareClass(price, price_before_24h)" style="white-space:nowrap"><i class="fa fa-btc"></i>{{price}}</span></h1>
             best market: <span class="text-muted">{{best_market}}</span><br/>
             <div ng-show="currency !== 'BTC'"><i class="fa fa-btc"></i><span class="text-muted">{{price_btc}}</span></div>
             <div ng-show="currency === 'BTC'"><span class="text-muted">{{price_non_btc | currency: currencySymbol(currency_non_btc)}}</span></div>
@@ -22,7 +22,7 @@
         <div class="span12">
 			volume:	
 			<span ng-show="currency !== 'BTC'" class="text-muted">{{volume | currency: currencySymbol(currency)}}</span>
-			<span ng-show="currency === 'BTC'" class="text-muted"><i class="fa fa-btc"></i>{{volume | number:6}}</span>
+			<span ng-show="currency === 'BTC'" class="text-muted" style="white-space:nowrap"><i class="fa fa-btc"></i>{{volume | number:6}}</span>
         </div>
     </div>
 </div>
