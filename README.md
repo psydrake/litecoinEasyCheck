@@ -12,6 +12,9 @@ The front end communicates with the back end via [JSONP](http://en.wikipedia.org
 
 ## Install On Your Phone / Tablet
 * [Litecoin Easy Check for Android](https://play.google.com/store/apps/details?id=net.edrake.litecoineasycheck)
+* [Litecoin Easy Check for Amazon Kindle](http://www.amazon.com/Drake-Emko-Litecoin-Easy-Check/dp/B00I2ROD74/ref=sr_1_1?s=mobile-apps&ie=UTF8&qid=1391451534&sr=1-1&keywords=litecoin+easy+check)
+* [Litecoin Easy Check for Windows Phone](http://www.windowsphone.com/en-us/store/app/litecoin-easy-check/8648a008-d8bb-4587-9b99-d36c4b21187c)
+* [Litecoin Easy Check for Firefox OS](https://marketplace.firefox.com/app/litecoin-easy-check)
 
 ## Use As A Web App
 * [Litecoin Easy Check in the Chrome Web Store](https://chrome.google.com/webstore/detail/litecoin-easy-check/eijmjnlmmgmpighmhdmjinnkicpdepcl)

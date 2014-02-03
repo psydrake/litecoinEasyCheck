@@ -63,43 +63,32 @@ angular.module('app.services', []).
 			},
 
 			getAppVersion: function() {
-				return '1.0.2'; // version
+				return '1.1.4'; // version
 			}
         }
     }).
 	factory('settingsService', function() {
 		return {
-			store: null,
+			store: null, // store is the Persist.js local storage store
 
 			setStore: function(theStore) {
 				this.store = theStore;
 			},
 
-            getCurrency: function() {
-                var currency = 'USD';
-                if (this.store && this.store.get('currency')) {
-                    currency = this.store.get('currency');
+            getValue: function(key) {
+				var value = '';
+				if (key === 'currency' || key ==='currency_non_btc') {
+					value = 'USD'; // default - this is overwritten by what is in store
+				}
+                if (this.store && this.store.get(key)) {
+                    value = this.store.get(key);
                 }
-                return currency;
+                return value;
             },
 
-            setCurrency: function(currency) {
-                if (currency && this.store) {
-                    this.store.set('currency', currency);
-                }
-            },
-
-            getBestMarket: function() {
-                var bestMarket = '';
-                if (this.store && this.store.get('best_market')) {
-                    bestMarket = this.store.get('best_market');
-                }
-                return bestMarket;
-            },
-
-            setBestMarket: function(bestMarket) {
-                if (bestMarket && this.store) {
-                    this.store.set('best_market', bestMarket);
+            setValue: function(key, value) {
+                if (key && this.store) {
+                    this.store.set(key, value);
                 }
             },
 
@@ -119,7 +108,7 @@ angular.module('app.services', []).
                 }
             },
 
-            symbols: ['CNY', 'EUR', 'USD']
+            symbols: ['BTC', 'CNY', 'EUR', 'USD']
         }
     }).
     factory('cryptocoinchartsAPIService', function($http, utilService) {

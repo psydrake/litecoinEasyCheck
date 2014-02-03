@@ -5,20 +5,22 @@
 		</div>
 	</div>
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span3">
             <div>
-                <!--<img src="img/icon-28.png" alt="Litecoin Easy Check Logo"/><br/>-->
                 24h before:<br/>
-				<span class="text-muted" ng-class="getPriceCompareClass(price_before_24h, price)">{{price_before_24h | currency: currencySymbol(currency)}}</span>
+				<span class="text-muted" ng-show="currency !== 'BTC'" ng-class="getPriceCompareClass(price_before_24h, price)">{{price_before_24h | currency: currencySymbol(currency)}}</span>
+				<span class="text-muted" ng-show="currency === 'BTC'" ng-class="getPriceCompareClass(price_before_24h, price)" style="white-space:nowrap"><i class="fa fa-btc"></i>{{price_before_24h}}</span>
             </div>
         </div>
-        <div class="span4">
-            <h1><span ng-class="getPriceCompareClass(price, price_before_24h)">{{price | currency: currencySymbol(currency)}}</span></h1>
+        <div class="span6">
+            <h1 ng-show="currency !== 'BTC'"><span ng-class="getPriceCompareClass(price, price_before_24h)">{{price | currency: currencySymbol(currency)}}</span></h1>
+            <h1 ng-show="currency === 'BTC'"><span ng-class="getPriceCompareClass(price, price_before_24h)" style="white-space:nowrap"><i class="fa fa-btc"></i>{{price}}</span></h1>
         </div>
-        <div class="span4">
+        <div class="span3">
 		    <div class="small">
 				volume:<br/>
-				<span style="font-weight:700">{{currencySymbol(currency)}}</span> <span class="text-muted">{{volume | number:2}}</span><br/>
+				<div ng-show="currency !== 'BTC'" style="white-space:nowrap"><span style="font-weight:700">{{currencySymbol(currency)}}</span> <span class="text-muted">{{volume | number:2}}</span></div>
+				<div ng-show="currency === 'BTC'" style="white-space:nowrap"><span style="font-weight:700"><i class="fa fa-btc"></i></span> <span class="text-muted">{{volume | number:6}}</span></div>
 				<span style="font-weight:700">{{currencySymbol('LTC')}}</span> <span class="text-muted">{{volume_ltc | number}}</span><br/>
 			</div>
         </div>
@@ -28,8 +30,11 @@
             <div>
                 best market: <span class="text-muted">{{best_market}}</span>
             </div>
-            <div>
-                <i class="fa fa-btc"></i> <span class="text-muted">{{price_btc}}</span>
+            <div ng-show="currency !== 'BTC'" style="white-space:nowrap">
+                <i class="fa fa-btc"></i><span class="text-muted">{{price_btc}}</span>
+            </div>
+            <div ng-show="currency === 'BTC'">
+                <span class="text-muted">{{price_non_btc | currency: currencySymbol(currency_non_btc)}}</span>
             </div>
 		</div>
 	</div>
