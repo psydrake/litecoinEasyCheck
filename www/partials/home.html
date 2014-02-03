@@ -34,7 +34,7 @@
                 <i class="fa fa-btc"></i> <span class="text-muted">{{price_btc}}</span>
             </div>
             <div ng-show="currency === 'BTC'">
-                <span class="text-muted">{{currencySymbol(currency_non_btc)}} {{price_non_btc}}</span>
+                <span class="text-muted">{{price_non_btc | currency: currencySymbol(currency_non_btc)}}</span>
             </div>
 		</div>
 	</div>
