@@ -6,6 +6,7 @@ var app = angular.module('app', [
         'app.services',
         'app.customService',
         'ngRoute',
+		'ngTouch',
         'ui.bootstrap'
     ]).
 	config(['$routeProvider', function($routeProvider) {
@@ -31,6 +32,10 @@ app.run(function($rootScope, $location, $timeout, $log, settingsService, customS
     };
 
 	$rootScope.openLink = customService.openLink;
+
+	$rootScope.goto = function(pageName) {
+		$location.path('/' + pageName);
+	}
 
 	$rootScope.currencySymbol = function(currency) {
 		return utilService.currencySymbol(currency);

@@ -18,6 +18,7 @@ The front end communicates with the back end via [JSONP](http://en.wikipedia.org
 
 ## Use As A Web App
 * [Litecoin Easy Check in the Chrome Web Store](https://chrome.google.com/webstore/detail/litecoin-easy-check/eijmjnlmmgmpighmhdmjinnkicpdepcl)
+* [Litecoin Easy Check in the Firefox Marketplace](https://marketplace.firefox.com/app/litecoin-easy-check)
 * [Litecoin Easy Check as a Web Site](http://d2y538ab9a8vah.cloudfront.net/main.html)
 
 ## Author
