@@ -13,7 +13,8 @@ from decimal import *
 # TODO: name and list your controllers here so their routes become accessible.
 from server.controllers import RESOURCE_NAME_controller
 
-TRADING_PAIR_URL = 'http://www.cryptocoincharts.info/v2/api/tradingPair/'
+TRADING_PAIR_URL = 'http://api.cryptocoincharts.info/tradingPair/'
+
 # backup URLs:
 TRADING_PAIR_URL_USD_BACKUP = 'https://coinbase.com/api/v1/prices/buy' 
 BTER_LTC_BTC_URL = 'http://data.bter.com/api/1/ticker/ltc_btc'
@@ -58,7 +59,7 @@ def pullLTCTradingPair(currency='USD'):
     url = TRADING_PAIR_URL + 'LTC_' + currency
 
     try:
-        data = urllib2.urlopen(url)
+        data = urlfetch.fetch(url, deadline=TIMEOUT_DEADLINE)
         if (not data or not data.content or data.status_code != 200):
             logging.warn('No content returned from ' + url)
             useBackupUrl = True
@@ -132,9 +133,9 @@ def pullLTCTradingPair(currency='USD'):
 @bottle.route('/tasks/pull-cryptocoincharts-data')
 def pullCryptocoinchartsData():
     pullLTCTradingPair('BTC')
+    pullLTCTradingPair('USD')
     pullLTCTradingPair('CNY')
     pullLTCTradingPair('EUR')
-    pullLTCTradingPair('USD')
     return "Done"
 
 @bottle.error(404)
