@@ -1,1 +1,60 @@
-{"prepare_queue":{"installed":[],"uninstalled":[]},"config_munge":{"res/xml/config.xml":{"/*":{"<feature name=\"UniversalAnalytics\"><param name=\"android-package\" value=\"com.danielcwilson.plugins.analytics.UniversalAnalyticsPlugin\" /></feature>":1,"<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.plugin.AdMob\" /></feature>":1,"<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>":1}},"AndroidManifest.xml":{"/*":{"<uses-permission android:name=\"android.permission.INTERNET\" />":2,"<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />":2},"/manifest/application":{"<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.ads.AdActivity\" />":1}}},"installed_plugins":{"com.danielcwilson.plugins.googleanalytics":{"PACKAGE_NAME":"net.edrake.litecoineasycheck"},"com.rjfun.cordova.plugin.admob":{"PACKAGE_NAME":"net.edrake.litecoineasycheck"},"org.apache.cordova.inappbrowser":{"PACKAGE_NAME":"net.edrake.litecoineasycheck"}},"dependent_plugins":{}}
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"UniversalAnalytics\"><param name=\"android-package\" value=\"com.danielcwilson.plugins.analytics.UniversalAnalyticsPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.plugin.AdMob\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 4
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 4
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.ads.AdActivity\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.danielcwilson.plugins.googleanalytics": {
+            "PACKAGE_NAME": "net.edrake.litecoineasycheck"
+        },
+        "com.rjfun.cordova.plugin.admob": {
+            "PACKAGE_NAME": "net.edrake.litecoineasycheck"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "net.edrake.litecoineasycheck"
+        }
+    },
+    "dependent_plugins": {}
+}

@@ -9,9 +9,10 @@
 VERSION=1.2
 
 # Only used in Android. Appended as minor version number if avaliable
-VERSION_CODE=5
+VERSION_CODE=6
 
 perl -pi -e "s/\sversion=\"\d+\.\d+\"\s/\ version=\"${VERSION}\"\ /" www/config.xml
+perl -pi -e "s/\sandroid\-versionCode=\"\d+\"\s/\ android-versionCode=\"${VERSION_CODE}\"\ /" www/config.xml
 perl -pi -e "s/return\s\'\d+\.\d+\.\d+\'\;/return\ \'${VERSION}\.${VERSION_CODE}\'\;/" www/js/services.js 
 perl -pi -e "s/android\:versionCode=\"\d+\"/android\:versionCode=\"${VERSION_CODE}\"/" platforms/android/AndroidManifest.xml
 perl -pi -e "s/version\=\"\d+.\d+\"/version\=\"${VERSION}\"/" platforms/android/cordova/defaults.xml
