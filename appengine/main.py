@@ -136,6 +136,7 @@ def pullCryptocoinchartsData():
     pullLTCTradingPair('USD')
     pullLTCTradingPair('CNY')
     pullLTCTradingPair('EUR')
+    pullLTCTradingPair('GBP')
     return "Done"
 
 @bottle.error(404)

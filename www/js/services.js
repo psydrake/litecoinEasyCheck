@@ -63,7 +63,7 @@ angular.module('app.services', []).
 			},
 
 			getAppVersion: function() {
-				return '1.2.6'; // version
+				return '1.2.7'; // version
 			}
         }
     }).
@@ -108,7 +108,7 @@ angular.module('app.services', []).
                 }
             },
 
-            symbols: ['BTC', 'CNY', 'EUR', 'USD']
+            symbols: ['BTC', 'CNY', 'EUR', 'GBP', 'USD']
         }
     }).
     factory('cryptocoinchartsAPIService', function($http, utilService) {
