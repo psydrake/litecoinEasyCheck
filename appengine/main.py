@@ -19,7 +19,7 @@ import config # this file contains secret API key(s), and so it is in .gitignore
 BTER_LTC_BTC_URL = 'http://data.bter.com/api/1/ticker/ltc_btc'
 TIMEOUT_DEADLINE = 12 # seconds
 
-# used for BTC / (CNY, GBP, EUR)
+# used for BTC / (CNY, GBP, EUR, USD)
 def bitcoinaverage_ticker(currency):
   timestamp = int(time.time())
   payload = '{}.{}'.format(timestamp, config.bitcoinaverage_public_key)
@@ -30,9 +30,13 @@ def bitcoinaverage_ticker(currency):
   headers = {'X-Signature': signature}
   return urlfetch.fetch(url, headers=headers, deadline=TIMEOUT_DEADLINE)
 
-def cryptopia_ticker(currency1, currency2):
-  url = 'https://www.cryptopia.co.nz/api/GetMarket/' + currency1 + '_' + currency2
-  return urlfetch.fetch(url, deadline=TIMEOUT_DEADLINE)
+def boilerplate_data_dict():
+  dataDict = {}
+  dataDict['price_before_24h'] = str(0)
+  dataDict['best_market'] = 'Using bter.com (error getting other market data)'
+  dataDict['volume_first'] = str(0)
+  dataDict['volume_second'] = str(0)
+  return dataDict
 
 # Run the Bottle wsgi application. We don't need to call run() since our
 # application is embedded within an App Engine WSGI application server.
@@ -66,37 +70,42 @@ def tradingLTC(currency=''):
   return mReturn
 
 def pullLTCTradingPair(currency='USD'):
-  data = urlfetch.fetch(BTER_LTC_BTC_URL, deadline=TIMEOUT_DEADLINE)
-  if (not data or not data.content or data.status_code != 200):
+  bterData = urlfetch.fetch(BTER_LTC_BTC_URL, deadline=TIMEOUT_DEADLINE)
+  if (not bterData or not bterData.content or bterData.status_code != 200):
     logging.error('No content returned from ' + BTER_LTC_BTC_URL)
     return
 
-  dataDict = json.loads(data.content)
-  btc_ltc_price = Decimal(dataDict['last'])
+  bterDataDict = json.loads(bterData.content)
+  btc_ltc_price = Decimal(bterDataDict['last'])
 
   tradingData = None
   if (currency == 'BTC'):
+    dataDict = boilerplate_data_dict()
     dataDict['price'] = '%.10f' % btc_ltc_price
-    if (dataDict['vol_ltc']):
-      dataDict['volume_first'] = dataDict['vol_ltc']
-    if (dataDict['vol_btc']):
-      dataDict['volume_second'] = dataDict['vol_btc']
+    if (bterDataDict['vol_ltc']):
+      dataDict['volume_first'] = bterDataDict['vol_ltc']
+    if (bterDataDict['vol_btc']):
+      dataDict['volume_second'] = bterDataDict['vol_btc']
+    dataDict['latest_trade'] = str(datetime.date.today())
     tradingData = json.dumps(dataDict)
 
   else: # currency is one of 'CNY', 'EUR', 'GBP', 'USD'
-    fiat_btc_price = None
-    data = bitcoinaverage_ticker(currency)
-    if (not data or not data.content or data.status_code != 200):
+    btc_data = bitcoinaverage_ticker(currency)
+    if (not btc_data or not btc_data.content or btc_data.status_code != 200):
       logging.error('No content returned for ' + currency)
       return
 
-    dataDict = json.loads(data.content)
-    fiat_btc_price = Decimal(dataDict['last'])
+    btcDataDict = json.loads(btc_data.content)
+    fiat_btc_price = Decimal(btcDataDict['last'])
     fiat_ltc_price = fiat_btc_price * btc_ltc_price
-    tradingData = "{'price': " + str(fiat_ltc_price) + ", 'latest_trade': '" + str(datetime.date.today()) + "', 'price_before_24h': 0, 'best_market': 'Using bter.com (error getting other market data)', 'volume_first': 0, 'volume_second': 0}"
+
+    dataDict = boilerplate_data_dict()
+    dataDict['price'] = str(fiat_ltc_price)
+    dataDict['latest_trade'] = btcDataDict['display_timestamp']
+    tradingData = json.dumps(dataDict)
 
   memcache.set('trading_ltc_' + currency, tradingData)
-  logging.info("Stored in memcache for key trading_ltc_" + currency + ", starting with: " + tradingData[0:20])
+  logging.info("Stored in memcache for key trading_ltc_" + currency + ": " + tradingData)
 
 @bottle.route('/tasks/pull-cryptocoincharts-data')
 def pullCryptocoinchartsData():
