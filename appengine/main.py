@@ -13,14 +13,26 @@ from decimal import *
 # TODO: name and list your controllers here so their routes become accessible.
 from server.controllers import RESOURCE_NAME_controller
 
-TRADING_PAIR_URL = 'http://api.cryptocoincharts.info/tradingPair/'
+import hashlib, hmac, time # for bitcoinaverage API
+import config # this file contains secret API key(s), and so it is in .gitignore
 
-# backup URLs:
-TRADING_PAIR_URL_USD_BACKUP = 'https://coinbase.com/api/v1/prices/buy' 
 BTER_LTC_BTC_URL = 'http://data.bter.com/api/1/ticker/ltc_btc'
-BTCAVERAGE_URL = 'https://api.bitcoinaverage.com/ticker/' # for BTC / (CNY, EUR, GBP, AUD)
-
 TIMEOUT_DEADLINE = 12 # seconds
+
+# used for BTC / (CNY, GBP, EUR)
+def bitcoinaverage_ticker(currency):
+  timestamp = int(time.time())
+  payload = '{}.{}'.format(timestamp, config.bitcoinaverage_public_key)
+  hex_hash = hmac.new(config.bitcoinaverage_secret_key.encode(), msg=payload.encode(), digestmod=hashlib.sha256).hexdigest()
+  signature = '{}.{}'.format(payload, hex_hash)
+
+  url = 'https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC' + currency
+  headers = {'X-Signature': signature}
+  return urlfetch.fetch(url, headers=headers, deadline=TIMEOUT_DEADLINE)
+
+def cryptopia_ticker(currency1, currency2):
+  url = 'https://www.cryptopia.co.nz/api/GetMarket/' + currency1 + '_' + currency2
+  return urlfetch.fetch(url, deadline=TIMEOUT_DEADLINE)
 
 # Run the Bottle wsgi application. We don't need to call run() since our
 # application is embedded within an App Engine WSGI application server.
@@ -39,96 +51,52 @@ def home():
 @bottle.route('/api/trading-ltc/')
 @bottle.route('/api/trading-ltc/<currency:re:[A-Z][A-Z][A-Z]>')
 def tradingLTC(currency=''):
-    response.content_type = 'application/json; charset=utf-8'
+  response.content_type = 'application/json; charset=utf-8'
 
-    mReturn = memcache.get('trading_ltc_' + currency)
-    if (not mReturn):
-        logging.warn("No data found in memcache for trading_ltc_" + currency)
-        mReturn = '{}'
+  mReturn = memcache.get('trading_ltc_' + currency)
+  if (not mReturn):
+    logging.warn("No data found in memcache for trading_ltc_" + currency)
+    mReturn = '{}'
 
-    query = request.query.decode()
-    if (len(query) > 0):
-        mReturn = query['callback'] + '(' + mReturn + ')'
+  query = request.query.decode()
+  if (len(query) > 0):
+    mReturn = query['callback'] + '(' + mReturn + ')'
 
-    logging.info("Returning data for trading_ltc_" + currency + ", starting with: " + mReturn[0:100])
-    return mReturn
+  logging.info("Returning data for trading_ltc_" + currency + ", starting with: " + mReturn[0:100])
+  return mReturn
 
 def pullLTCTradingPair(currency='USD'):
-    data = None
-    useBackupUrl = False
-    url = TRADING_PAIR_URL + 'LTC_' + currency
+  data = urlfetch.fetch(BTER_LTC_BTC_URL, deadline=TIMEOUT_DEADLINE)
+  if (not data or not data.content or data.status_code != 200):
+    logging.error('No content returned from ' + BTER_LTC_BTC_URL)
+    return
 
-    try:
-        data = urlfetch.fetch(url, deadline=TIMEOUT_DEADLINE)
-        if (not data or not data.content or data.status_code != 200):
-            logging.warn('No content returned from ' + url)
-            useBackupUrl = True
-    except:
-        logging.warn('Error retrieving ' + url)
-        useBackupUrl = True
+  dataDict = json.loads(data.content)
+  btc_ltc_price = Decimal(dataDict['last'])
 
-    if (useBackupUrl):
-        logging.warn('Now trying ' + BTER_LTC_BTC_URL)
-        dataBtc = None
-        try:
-            dataBtc = urlfetch.fetch(BTER_LTC_BTC_URL, deadline=TIMEOUT_DEADLINE)
-            if (not dataBtc or not dataBtc.content or dataBtc.status_code != 200):
-                logging.error('No content returned from ' + BTER_LTC_BTC_URL)
-                return
-        except:
-            logging.error('Error retrieving ' + BTER_LTC_BTC_URL)
-            return
-
-        if (currency == 'BTC'):
-            data = dataBtc
-        else:
-            backupUrl = ''
-            if (currency == 'USD'):
-                backupUrl = TRADING_PAIR_URL_USD_BACKUP
-            elif (currency in ['CNY', 'EUR', 'GBP', 'AUD']):
-                backupUrl = BTCAVERAGE_URL + currency + '/'
-            else:
-                logger.error('Cannot get trading pair for ' + currency1 + ' / ' + currency2)
-                return
-
-            logging.warn('Now trying ' + backupUrl)
-            dataCurrency = urlfetch.fetch(backupUrl, deadline=TIMEOUT_DEADLINE)
-
-            # LTC -> BTC -> FIAT
-            dataBtcDict = json.loads(dataBtc.content)
-            logging.info('dataBtcDict: ' + str(dataBtcDict))
-            dataCurrencyDict = json.loads(dataCurrency.content)
-            if (currency == 'USD'):
-                dataCurrencyDict['last'] = dataCurrencyDict['subtotal']['amount']
-            logging.info('dataCurrencyDict: ' + str(dataCurrencyDict))
-            
-            price = Decimal(dataBtcDict['last']) * Decimal(dataCurrencyDict['last'])
-            logging.info('price: ' + str(price))
-
-            tradingData = "{'price': " + str(price) + ", 'latest_trade': '" + str(datetime.date.today()) + "', 'price_before_24h': 0, 'best_market': 'Using bter.com (error getting other market data)', 'volume_first': 0, 'volume_second': 0}"
-            memcache.set('trading_ltc_' + currency, tradingData)
-            logging.info("Stored in memcache for key trading_ltc_" + currency + ", starting with: " + tradingData[0:20])
-            #logging.info("Stored in memcache for key trading_ltc_" + currency + ": " + tradingData)
-            return
-
-    dataDict = json.loads(data.content)
-    if (useBackupUrl and currency == 'BTC'): # we are using bter for this backup data
-        if (dataDict['last'] and 'price' not in dataDict):
-            dataDict['price'] = dataDict['last']
-        if (dataDict['vol_ltc']):
-            dataDict['volume_first'] = dataDict['vol_ltc']
-        if (dataDict['vol_btc']):
-            dataDict['volume_second'] = dataDict['vol_btc']
-        dataDict['latest_trade'] = str(datetime.date.today())
-        dataDict['price_before_24h'] = 0
-        dataDict['best_market'] = 'Using bter.com (error getting other market data)'
-
-    logging.info('dataDict: ' + str(dataDict))
+  tradingData = None
+  if (currency == 'BTC'):
+    dataDict['price'] = '%.10f' % btc_ltc_price
+    if (dataDict['vol_ltc']):
+      dataDict['volume_first'] = dataDict['vol_ltc']
+    if (dataDict['vol_btc']):
+      dataDict['volume_second'] = dataDict['vol_btc']
     tradingData = json.dumps(dataDict)
 
-    memcache.set('trading_ltc_' + currency, tradingData)
-    logging.info("Stored in memcache for key trading_ltc_" + currency + ", starting with: " + tradingData[0:20])
-    #logging.info("Stored in memcache for key trading_ltc_" + currency + ": " + tradingData)
+  else: # currency is one of 'CNY', 'EUR', 'GBP', 'USD'
+    fiat_btc_price = None
+    data = bitcoinaverage_ticker(currency)
+    if (not data or not data.content or data.status_code != 200):
+      logging.error('No content returned for ' + currency)
+      return
+
+    dataDict = json.loads(data.content)
+    fiat_btc_price = Decimal(dataDict['last'])
+    fiat_ltc_price = fiat_btc_price * btc_ltc_price
+    tradingData = "{'price': " + str(fiat_ltc_price) + ", 'latest_trade': '" + str(datetime.date.today()) + "', 'price_before_24h': 0, 'best_market': 'Using bter.com (error getting other market data)', 'volume_first': 0, 'volume_second': 0}"
+
+  memcache.set('trading_ltc_' + currency, tradingData)
+  logging.info("Stored in memcache for key trading_ltc_" + currency + ", starting with: " + tradingData[0:20])
 
 @bottle.route('/tasks/pull-cryptocoincharts-data')
 def pullCryptocoinchartsData():
